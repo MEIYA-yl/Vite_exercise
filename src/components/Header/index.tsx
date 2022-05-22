@@ -2,7 +2,7 @@ import { devDependencies } from "../../../package.json";
 
 export function Header() {
   return (
-    <div className="p-20px text-center">
+    <div className="p-20px text-center flex-c">
       <h1 className="font-bold text-2xl mb-2">
         vite version: {devDependencies.vite}
       </h1>
