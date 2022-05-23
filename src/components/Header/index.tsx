@@ -1,4 +1,4 @@
-import { devDependencies } from "../../../package.json";
+import { devDependencies } from '../../../package.json';
 
 export function Header() {
   return (
