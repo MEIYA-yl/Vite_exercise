@@ -69,5 +69,6 @@ export default defineConfig({
     alias: {
       '@assets': path.join(__dirname, 'src/assets')
     }
-  }
+  },
+  assetsInclude: ['mp4', 'mp3', '.gitf'] // vite 对常见资源进行了内部支持，通过配置将类型文件当做一个 ES 模块进行加载
 });
