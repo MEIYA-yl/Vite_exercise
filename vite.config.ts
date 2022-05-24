@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer'; // PostCss
 import windi from 'vite-plugin-windicss'; // css 原子化
 import viteEslint from 'vite-plugin-eslint';
 import viteStylelint from '@amatlash/vite-plugin-stylelint';
+import svgr from 'vite-plugin-svgr';
 
 const variablePath = normalizePath(path.resolve('./src/variable.scss'));
 
@@ -35,7 +36,8 @@ export default defineConfig({
     viteEslint(),
     viteStylelint({
       exclude: /windicss|node_modules/
-    })
+    }),
+    svgr()
   ],
 
   // scss 相关配置
@@ -61,6 +63,11 @@ export default defineConfig({
         // additionalData 的内容会在每个 scss 文件的开头自动注入
         additionalData: `@import "${variablePath}";`
       }
+    }
+  },
+  resolve: {
+    alias: {
+      '@assets': path.join(__dirname, 'src/assets')
     }
   }
 });
