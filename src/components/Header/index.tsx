@@ -4,6 +4,13 @@ import styles from './index.module.scss';
 // 导入图片
 import logoStr from '@assets/imgs/picture.jpeg';
 import { ReactComponent as ReactLogo } from '@assets/icons/logo.svg';
+// web worker 脚本
+import Worker from './example.js?worker';
+// 初始化 Worker 实例
+const worker = new Worker();
+worker.addEventListener('message', (e) => {
+  console.log(e);
+});
 
 export function Header() {
   useEffect(() => {
